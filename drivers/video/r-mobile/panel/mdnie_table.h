@@ -1,0 +1,4332 @@
+#ifndef __MDNIE_TABLE_H__
+#define __MDNIE_TABLE_H__
+
+#include "mdnie.h"
+
+#if 0
+/* + CABC on Sequence */
+static u8 en_ext_cmd[] = { /*0xB9 */
+4,
+0xB9,
+0xFF,
+0x83,
+0x69,
+0x00 /* The Last 0x00 : Sequence End Mark */
+};
+#endif
+
+#if 0
+static u8 set_cabc[] = { /*0xC9 */
+0xC9,
+0x0F, /*PWM CLK DIV*/
+0xFF, /*PWM period*/
+};
+#endif
+
+#if 0
+static u8 set_brightness_value[] = { /* 0x51 */
+2,
+0x51,
+0xFF, /*backlight pwm duty cycle*/
+0x00 /* The Last 0x00 : Sequence End Mark */
+};
+#endif
+
+#if 0
+static u8 control_brightness[] = { /* 0x53 */
+2,
+0x53,
+0x24,
+0x00 /* The Last 0x00 : Sequence End Mark */
+};
+/* - CABC on Sequence */
+#endif
+
+#if 0
+/* + CABC Mode Sequence */
+static u8 cabc_ui[] = { /* 0x55 */
+0x55,
+0x01,
+};
+#endif
+
+#if 0
+static u8 cabc_still[] = { /* 0x55 */
+2,
+0x55,
+0x02,
+0x00 /* The Last 0x00 : Sequence End Mark */
+};
+#endif
+
+#if 0
+static u8 cabc_moving[] = { /* 0x55 */
+2,
+0x55,
+0x03,
+0x00 /* The Last 0x00 : Sequence End Mark */
+};
+#endif
+
+
+/* - CABC Mode Sequence */
+
+#if 0
+/* + CABC off Sequence */
+static u8 cabc_off[] = { /* 0x55 */
+0x55,
+0x00,
+};
+/* - CABC off Sequence */
+#endif
+
+#if 1
+static u8 auto_browser[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xff, //scr Cb Yr
+0x1c, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+/*0x00  The Last 0x00 : Sequence End Mark */
+};
+
+static u8 auto_camera[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xff, //scr Cb Yr
+0x1c, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+/*0x00  The Last 0x00 : Sequence End Mark */
+};
+
+static u8 auto_ebook[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf5, //scr Wg Wg
+0x00, //scr Kg Kg
+0xe2, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+/*0x00  The Last 0x00 : Sequence End Mark */
+};
+
+static u8 auto_gallery[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xff, //scr Cb Yr
+0x1c, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+/*0x00  The Last 0x00 : Sequence End Mark */
+};
+
+static u8 auto_ui[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 auto_video[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xff, //scr Cb Yr
+0x1c, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 auto_vtcall[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 bypass[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 camera[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_browser[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_ebook[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_gallery[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_ui[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_video[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 dynamic_vtcall[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x0f, //curve 1 a
+0x00, //curve 2 b
+0x0f, //curve 2 a
+0x00, //curve 3 b
+0x0f, //curve 3 a
+0x00, //curve 4 b
+0x0f, //curve 4 a
+0x09, //curve 5 b
+0xa2, //curve 5 a
+0x09, //curve 6 b
+0xa2, //curve 6 a
+0x09, //curve 7 b
+0xa2, //curve 7 a
+0x09, //curve 8 b
+0xa2, //curve 8 a
+0x09, //curve 9 b
+0xa2, //curve 9 a
+0x09, //curve10 b
+0xa2, //curve10 a
+0x0a, //curve11 b
+0xa2, //curve11 a
+0x0a, //curve12 b
+0xa2, //curve12 a
+0x0a, //curve13 b
+0xa2, //curve13 a
+0x0a, //curve14 b
+0xa2, //curve14 a
+0x0a, //curve15 b
+0xa2, //curve15 a
+0x0a, //curve16 b
+0xa2, //curve16 a
+0x0a, //curve17 b
+0xa2, //curve17 a
+0x0a, //curve18 b
+0xa2, //curve18 a
+0x0f, //curve19 b
+0xa4, //curve19 a
+0x0f, //curve20 b
+0xa4, //curve20 a
+0x0f, //curve21 b
+0xa4, //curve21 a
+0x23, //curve22 b
+0x1c, //curve22 a
+0x48, //curve23 b
+0x17, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 0.06
+0x2b,
+0x1f, //cc r2
+0xdc,
+0x1f, //cc r3
+0xf9,
+0x1f, //cc g1
+0xee,
+0x04, //cc g2
+0x19,
+0x1f, //cc g3
+0xf9,
+0x1f, //cc b1
+0xee,
+0x1f, //cc b2
+0xdc,
+0x04, //cc b3
+0x36,
+};
+
+static u8 email[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf8, //scr Wg Wg
+0x00, //scr Kg Kg
+0xea, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_browser[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_ebook[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_gallery[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_ui[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_video[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 movie_vtcall[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x81, //scr Cr Yb
+0xd9, //scr Rr Bb
+0xf6, //scr Cg Yg
+0x1c, //scr Rg Bg
+0xec, //scr Cb Yr
+0x13, //scr Rb Br
+0xe0, //scr Mr Mb
+0x52, //scr Gr Gb
+0x34, //scr Mg Mg
+0xee, //scr Gg Gg
+0xf5, //scr Mb Mr
+0x1f, //scr Gb Gr
+0xe9, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf3, //scr Yg Cg
+0x1f, //scr Bg Rg
+0x40, //scr Yb Cr
+0xeb, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_browser[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_ebook[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_gallery[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_ui[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_video[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 natural_vtcall[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xfb, //scr Rr Bb
+0xef, //scr Cg Yg
+0x10, //scr Rg Bg
+0xe4, //scr Cb Yr
+0x10, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x20, //scr Mg Mg
+0xe2, //scr Gg Gg
+0xec, //scr Mb Mr
+0x00, //scr Gb Gr
+0xed, //scr Yr Cb
+0x1c, //scr Br Rb
+0xf1, //scr Yg Cg
+0x1a, //scr Bg Rg
+0x2a, //scr Yb Cr
+0xf4, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xf7, //scr Wg Wg
+0x00, //scr Kg Kg
+0xed, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 negative[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0xff, //scr Cr Yb
+0x00, //scr Rr Bb
+0x00, //scr Cg Yg
+0xff, //scr Rg Bg
+0x00, //scr Cb Yr
+0xff, //scr Rb Br
+0x00, //scr Mr Mb
+0xff, //scr Gr Gb
+0xff, //scr Mg Mg
+0x00, //scr Gg Gg
+0x00, //scr Mb Mr
+0xff, //scr Gb Gr
+0x00, //scr Yr Cb
+0xff, //scr Br Rb
+0x00, //scr Yg Cg
+0xff, //scr Bg Rg
+0xff, //scr Yb Cr
+0x00, //scr Bb Rr
+0x00, //scr Wr Wb
+0xff, //scr Kr Kb
+0x00, //scr Wg Wg
+0xff, //scr Kg Kg
+0x00, //scr Wb Wr
+0xff, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_browser[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_ebook[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_gallery[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_ui[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_video[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 standard_vtcall[] = {
+0xEC,
+0x00, //roi ctrl
+0x00, //roi0 x start
+0x00,
+0x00, //roi0 x end
+0x00,
+0x00, //roi0 y start
+0x00,
+0x00, //roi0 y end
+0x00,
+0x00, //roi1 x strat
+0x00,
+0x00, //roi1 x end
+0x00,
+0x00, //roi1 y start
+0x00,
+0x00, //roi1 y end
+0x00,
+0x00, //scr Cr Yb
+0xff, //scr Rr Bb
+0xff, //scr Cg Yg
+0x00, //scr Rg Bg
+0xff, //scr Cb Yr
+0x00, //scr Rb Br
+0xff, //scr Mr Mb
+0x00, //scr Gr Gb
+0x00, //scr Mg Mg
+0xff, //scr Gg Gg
+0xff, //scr Mb Mr
+0x00, //scr Gb Gr
+0xff, //scr Yr Cb
+0x00, //scr Br Rb
+0xff, //scr Yg Cg
+0x00, //scr Bg Rg
+0x00, //scr Yb Cr
+0xff, //scr Bb Rr
+0xff, //scr Wr Wb
+0x00, //scr Kr Kb
+0xff, //scr Wg Wg
+0x00, //scr Kg Kg
+0xff, //scr Wb Wr
+0x00, //scr Kb Kr
+0x00, //curve 1 b
+0x20, //curve 1 a
+0x00, //curve 2 b
+0x20, //curve 2 a
+0x00, //curve 3 b
+0x20, //curve 3 a
+0x00, //curve 4 b
+0x20, //curve 4 a
+0x00, //curve 5 b
+0x20, //curve 5 a
+0x00, //curve 6 b
+0x20, //curve 6 a
+0x00, //curve 7 b
+0x20, //curve 7 a
+0x00, //curve 8 b
+0x20, //curve 8 a
+0x00, //curve 9 b
+0x20, //curve 9 a
+0x00, //curve10 b
+0x20, //curve10 a
+0x00, //curve11 b
+0x20, //curve11 a
+0x00, //curve12 b
+0x20, //curve12 a
+0x00, //curve13 b
+0x20, //curve13 a
+0x00, //curve14 b
+0x20, //curve14 a
+0x00, //curve15 b
+0x20, //curve15 a
+0x00, //curve16 b
+0x20, //curve16 a
+0x00, //curve17 b
+0x20, //curve17 a
+0x00, //curve18 b
+0x20, //curve18 a
+0x00, //curve19 b
+0x20, //curve19 a
+0x00, //curve20 b
+0x20, //curve20 a
+0x00, //curve21 b
+0x20, //curve21 a
+0x00, //curve22 b
+0x20, //curve22 a
+0x00, //curve23 b
+0x20, //curve23 a
+0x00, //curve24 b
+0xFF, //curve24 a
+0x04, //cc r1 x
+0x00,
+0x00, //cc r2
+0x00,
+0x00, //cc r3
+0x00,
+0x00, //cc g1
+0x00,
+0x04, //cc g2
+0x00,
+0x00, //cc g3
+0x00,
+0x00, //cc b1
+0x00,
+0x00, //cc b2
+0x00,
+0x04, //cc b3
+0x00,
+};
+
+static u8 mdnie_cmd1[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x33, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x00, //sharpen cc gamma 00 0 0
+};
+
+static u8 mdnie_cmd2[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x33, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x04, //sharpen cc gamma 00 0 0
+};
+
+static u8 mdnie_cmd3[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x00, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x00, //sharpen cc gamma 00 0 0
+};
+
+static u8 mdnie_cmd4[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x33, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x03, //sharpen cc gamma 00 0 0
+};
+
+static u8 mdnie_cmd5[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x33, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x07, //sharpen cc gamma 00 0 0
+};
+
+static u8 mdnie_cmd6[] = {
+0xEB,
+0x01, //mdnie_en
+0x00, //data_width mask 00 000
+0x30, //scr_roi 1 scr algo_roi 1 algo 00 1 0 00 1 0
+0x00, //sharpen cc gamma 00 0 0
+};
+#endif
+
+#define MIPI_DSI_DCS_LONG_WRITE		(0x39)
+#define MIPI_DSI_GEN_LONG_WRITE		(0x29)
+#define MIPI_DSI_DCS_SHORT_WRITE_PARAM	(0x15)
+#define MIPI_DSI_GEN_SHORT_WRITE_PARAM	(0x23)
+#define MIPI_DSI_DCS_SHORT_WRITE	(0x05)
+#define MIPI_DSI_GEN_SHORT_WRITE	(0x03)
+#define MIPI_DSI_SET_MAX_RETURN_PACKET	(0x37)
+#define MIPI_DSI_DCS_READ		(0x06)
+#define MIPI_DSI_DELAY			(0x00)
+#define MIPI_DSI_BLACK			(0x01)
+#define MIPI_DSI_END			(0xFF)
+
+static const struct specific_cmdset auto_browser_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_browser, sizeof(auto_browser) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_camera_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_camera, sizeof(auto_camera) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_ebook_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_ebook, sizeof(auto_ebook) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_gallery_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_gallery, sizeof(auto_gallery) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_ui_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_ui, sizeof(auto_ui) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_video_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_video, sizeof(auto_video) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset auto_vtcall_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, auto_vtcall, sizeof(auto_vtcall) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset bypass_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, bypass, sizeof(bypass) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd3, sizeof(mdnie_cmd3) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset camera_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, camera, sizeof(camera) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_browser_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_browser, sizeof(dynamic_browser) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd4, sizeof(mdnie_cmd4) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_ebook_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_ebook, sizeof(dynamic_ebook) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd4, sizeof(mdnie_cmd4) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_gallery_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_gallery, sizeof(dynamic_gallery) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd5, sizeof(mdnie_cmd5) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_ui_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_ui, sizeof(dynamic_ui) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd4, sizeof(mdnie_cmd4) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_video_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_video, sizeof(dynamic_video) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd5, sizeof(mdnie_cmd5) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset dynamic_vtcall_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, dynamic_vtcall, sizeof(dynamic_vtcall) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd5, sizeof(mdnie_cmd5) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset email_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, email, sizeof(email) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_browser_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_browser, sizeof(movie_browser) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_ebook_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_ebook, sizeof(movie_ebook) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_gallery_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_gallery, sizeof(movie_gallery) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_ui_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_ui, sizeof(movie_ui) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_video_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_video, sizeof(movie_video) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset movie_vtcall_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, movie_vtcall, sizeof(movie_vtcall) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_browser_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_browser, sizeof(natural_browser) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_ebook_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_ebook, sizeof(natural_ebook) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_gallery_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_gallery, sizeof(natural_gallery) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_ui_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_ui, sizeof(natural_ui) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_video_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_video, sizeof(natural_video) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset natural_vtcall_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, natural_vtcall, sizeof(natural_vtcall) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset negative_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, negative, sizeof(negative) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd6, sizeof(mdnie_cmd6) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_browser_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_browser, sizeof(standard_browser) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_ebook_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_ebook, sizeof(standard_ebook) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_gallery_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_gallery, sizeof(standard_gallery) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_ui_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_ui, sizeof(standard_ui) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd1, sizeof(mdnie_cmd1) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_video_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_video, sizeof(standard_video) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+static const struct specific_cmdset standard_vtcall_cmdset[] = {
+	{ MIPI_DSI_DCS_LONG_WRITE, standard_vtcall, sizeof(standard_vtcall) },
+	{ MIPI_DSI_DCS_LONG_WRITE, mdnie_cmd2, sizeof(mdnie_cmd2) },	
+	{ MIPI_DSI_END,	NULL, 0 }
+};
+
+struct mdnie_tuning_info {
+	const char *name;
+	const struct specific_cmdset *sequence;
+};
+
+struct mdnie_tuning_info tuning_table[CABC_MAX][MODE_MAX][SCENARIO_MAX] = {
+	{
+		{
+			{"dynamic_ui",		dynamic_ui_cmdset},
+			{"dynamic_video",	dynamic_video_cmdset},
+			{"dynamic_video",	dynamic_video_cmdset},
+			{"dynamic_video",	dynamic_video_cmdset},
+			{"camera",		camera_cmdset},
+			{"dynamic_ui",		dynamic_ui_cmdset},
+			{"dynamic_gallery",	dynamic_gallery_cmdset},
+			{"dynamic_vt",		dynamic_vtcall_cmdset},
+			{"dynamic_browser",	dynamic_browser_cmdset},
+			{"dynamic_ebook",		dynamic_ebook_cmdset},
+			{"email",		email_cmdset}
+		}, {
+			{"standard_ui",		standard_ui_cmdset},
+			{"standard_video",	standard_video_cmdset},
+			{"standard_video",	standard_video_cmdset},
+			{"standard_video",	standard_video_cmdset},
+			{"camera",		camera_cmdset},
+			{"standard_ui",		standard_ui_cmdset},
+			{"standard_gallery",	standard_gallery_cmdset},
+			{"standard_vt",		standard_vtcall_cmdset},
+			{"standard_browser",	standard_browser_cmdset},
+			{"standard_ebook",	standard_ebook_cmdset},
+			{"email",		email_cmdset}
+		}, {
+			{"natural_ui",		natural_ui_cmdset},
+			{"natural_video",	natural_video_cmdset},
+			{"natural_video",	natural_video_cmdset},
+			{"natural_video",	natural_video_cmdset},
+			{"camera",		camera_cmdset},
+			{"natural_ui",		natural_ui_cmdset},
+			{"natural_gallery",	natural_gallery_cmdset},
+			{"natural_vt",		natural_vtcall_cmdset},
+			{"natural_browser",	natural_browser_cmdset},
+			{"natural_ebook",	natural_ebook_cmdset},
+			{"email",		email_cmdset}
+		}, {
+			{"movie_ui",		movie_ui_cmdset},
+			{"movie_video",		movie_video_cmdset},
+			{"movie_video",		movie_video_cmdset},
+			{"movie_video",		movie_video_cmdset},
+			{"camera",		camera_cmdset},
+			{"movie_ui",		movie_ui_cmdset},
+			{"movie_gallery",	movie_gallery_cmdset},
+			{"movie_vt",		movie_vtcall_cmdset},
+			{"movie_browser",	movie_browser_cmdset},
+			{"movie_ebook",		movie_ebook_cmdset},
+			{"email",		email_cmdset}
+		}, {
+			{"auto_ui",		auto_ui_cmdset},
+			{"auto_video",		auto_video_cmdset},
+			{"auto_video",		auto_video_cmdset},
+			{"auto_video",		auto_video_cmdset},
+			{"auto_camera",		auto_camera_cmdset},
+			{"auto_ui",		auto_ui_cmdset},
+			{"auto_gallery",	auto_gallery_cmdset},
+			{"auto_vt",		auto_vtcall_cmdset},
+			{"auto_browser",	auto_browser_cmdset},
+			{"auto_ebook",		auto_ebook_cmdset},
+			{"email",		email_cmdset}
+		}
+	}, 
+};
+
+struct mdnie_tuning_info negative_table[CABC_MAX] = {
+	{NULL,			NULL},	
+	{"negative",		negative_cmdset},
+};
+
+struct mdnie_tuning_info accessibility_table[CABC_MAX][ACCESSIBILITY_MAX] = {
+	{
+		{NULL,			NULL},
+		{"negative",		negative_cmdset},
+	},
+};
+struct mdnie_tuning_info color_tone_table[COLOR_TONE_MAX - COLOR_TONE_1] = {
+	{"color_tone_1",	NULL},
+	{"color_tone_2",	NULL},
+	{"color_tone_3",	NULL},
+};
+
+#endif /* __MDNIE_TABLE_H__ */
